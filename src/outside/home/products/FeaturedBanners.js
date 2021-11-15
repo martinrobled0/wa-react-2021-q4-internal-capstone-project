@@ -1,6 +1,7 @@
 import ImageC from '../../../utils/modules/image/Image';
+import Slider, { SliderItem } from '../../../utils/modules/Slider/Slider';
 import dataBanners from './../../../mocks/en-us/featured-banners'
-import { BannerTitle, BannersList, BannerCard } from './FeaturedBaners.styled';
+import { BannerTitle} from './FeaturedBaners.styled';
 
 // const banners = dataFeaturedBanners.find( banner => banner.results);
 const banners = dataBanners.results;
@@ -11,7 +12,7 @@ export const FeaturedBanners = () => {
             <BannerTitle>
                 <p>FeaturedBanners</p>
             </BannerTitle>
-            <BannersList >
+            {/* <BannersList >
                 {
                     banners.map( data => (
                         <BannerCard key={data.id}>
@@ -27,7 +28,19 @@ export const FeaturedBanners = () => {
                         </BannerCard>
                     ))
                 }
-            </BannersList>
+            </BannersList> */}
+            <Slider>
+                {
+                        banners.map( data => (
+                            <SliderItem key={data.id}>
+                                <ImageC src={data.data.main_image.url} alt={data.data.title}/>
+                            </SliderItem>
+                              
+                        ))
+                    }
+                
+
+            </Slider>
         </>
     )
 }
