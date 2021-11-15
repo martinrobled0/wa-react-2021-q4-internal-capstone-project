@@ -5,7 +5,7 @@ export const Footer = () => {
     return (
         <FooterWrapper>
             <div className="FooterWrapper-content">
-                <p>Ecommerce created during Wizeline’s Academy React Bootcamp”</p>
+                <p>Ecommerce created during Wizeline’s Academy React Bootcamp</p>
             </div>
         </FooterWrapper>
     )

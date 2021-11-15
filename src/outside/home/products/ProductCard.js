@@ -18,7 +18,7 @@ export const ProductCard = (
                     <div className="ProductCard-slug">{categoryName}</div>
                 </div>
                 <div className="ProductCard-price">
-                    {price}
+                    $ {price}
                 </div>
             </div>
 
