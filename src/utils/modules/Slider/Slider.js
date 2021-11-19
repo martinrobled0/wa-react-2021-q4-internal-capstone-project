@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-
+import PropTypes from "prop-types";
 import { Slide } from "./Slider.styled";
 
-export const SliderItem = ({ children, width, src }) => {
+export const SliderItem = ({ children, width }) => {
   return (
     <div className="Slider-item" style={{ width: width }}>
       {children}
@@ -41,13 +41,20 @@ const Slider = ({ children }) => {
 
   const handlers = useSwipeable({
     onSwipedLeft: () => updateIndex(activeIndex + 1),
-    onSwipedRight: () => updateIndex(activeIndex - 1)
+    onSwipedRight: () => updateIndex(activeIndex - 1),
   });
 
   return (
-    <Slide {...handlers} onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)} >
-      <div className="inner" style={{ transform: `translateX(-${activeIndex * 100}%)` }}>
-        {React.Children.map(children, (child, index) => {
+    <Slide
+      {...handlers}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <div
+        className="inner"
+        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+      >
+        {React.Children.map(children, (child) => {
           return React.cloneElement(child, { width: "100%" });
         })}
       </div>
@@ -81,6 +88,16 @@ const Slider = ({ children }) => {
       </div>
     </Slide>
   );
+};
+
+Slider.propTypes = {
+  children: PropTypes.any,
+};
+
+SliderItem.propTypes = {
+  children: PropTypes.any,
+  width: PropTypes.string,
+  src: PropTypes.string,
 };
 
 export default Slider;

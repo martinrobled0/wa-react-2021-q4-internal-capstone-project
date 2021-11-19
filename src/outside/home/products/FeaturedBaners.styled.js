@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const BannerTitle = styled.div`
     width:100%
@@ -8,8 +8,6 @@ const BannerTitle = styled.div`
     color:#7f4f24;
     font-weight: bold;
     font-size:25px;
-`
+`;
 
-export {
-    BannerTitle
-}
+export { BannerTitle };

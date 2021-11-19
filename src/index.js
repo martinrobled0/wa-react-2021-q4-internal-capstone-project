@@ -1,12 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import ShopApp from './ShopApp';
-
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import ShopApp from "./ShopApp";
 
 ReactDOM.render(
   <>
     <ShopApp />
   </>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
