@@ -1,0 +1,43 @@
+{
+  "workbench.colorTheme": "Default Dark+",
+  "bracket-pair-colorizer-2.colorMode": "Independent",
+  "bracket-pair-colorizer-2.colors": [
+    "#fafafa",
+    "#9F51B6",
+    "#F7C244",
+    "#F07850",
+    "#9CDD29",
+    "#C497D4"
+  ],
+  "editor.fontSize": 14,
+  "editor.fontLigatures": null,
+  "phpcbf.onsave": true,
+  // Enable per-language
+  "[javascript]": {
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "phpcs.standard": "./phpcs.xml",
+  "phpcs.executablePath": "./vendor/bin/phpcs",
+  "phpsab.standard": "./phpcs.xml",
+  "phpsab.executablePathCS": "./vendor/bin/phpcs",
+  "phpsab.executablePathCBF": "./vendor/bin/phpcbf",
+  "phpsab.fixerEnable": true,
+  "phpsab.snifferEnable": true,
+  "phpsab.snifferMode": "onType",
+  "phpcs.showSources": true,
+  "php.validate.run": "onType",
+  "prettier.singleQuote": true,
+  "editor.codeActionsOnSave": { "source.fixAll.eslint": true },
+  "editor.formatOnSave": true,
+  "eslint.alwaysShowStatus": true,
+  "files.autoSave": "onFocusChange",
+  "window.zoomLevel": 2
+}
