@@ -1,7 +1,7 @@
 import React from "react";
-import ImageC from "../../utils/modules/image/Image";
+import ImageC from "../../../utils/modules/image/Image";
 import { HomeWrapper } from "./Home.styled";
-import banner from "./../../utils/assets/forniture-banner.jpeg";
+import banner from "./../../../utils/assets/forniture-banner.jpeg";
 import { FeaturedBanners } from "./products/FeaturedBanners";
 import { CategoriesGrid } from "./products/CategoriesGrid";
 import { FeaturedProducts } from "./products/FeaturedProducts";

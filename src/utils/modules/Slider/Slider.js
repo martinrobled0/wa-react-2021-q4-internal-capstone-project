@@ -3,14 +3,6 @@ import { useSwipeable } from "react-swipeable";
 import PropTypes from "prop-types";
 import { Slide } from "./Slider.styled";
 
-export const SliderItem = ({ children, width }) => {
-  return (
-    <div className="Slider-item" style={{ width: width }}>
-      {children}
-    </div>
-  );
-};
-
 const Slider = ({ children }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
@@ -92,12 +84,6 @@ const Slider = ({ children }) => {
 
 Slider.propTypes = {
   children: PropTypes.any,
-};
-
-SliderItem.propTypes = {
-  children: PropTypes.any,
-  width: PropTypes.string,
-  src: PropTypes.string,
 };
 
 export default Slider;

@@ -1,4 +1,4 @@
-import dataCategories from "../../../mocks/en-us/product-categories.json";
+import dataCategories from "../../../../mocks/en-us/product-categories.json";
 import { CategorieCard } from "../categories/CategorieCard";
 import {
   ProductsCategories,

@@ -1,4 +1,4 @@
-import dataProducts from "../../../mocks/en-us/featured-products.json";
+import dataProducts from "../../../../mocks/en-us/featured-products.json";
 import {
   FeaturedProductsWrapper,
   FeaturedProductsTitle,

@@ -1,5 +1,5 @@
 import React from "react";
-import { Home } from "./outside/home/Home";
+import { Home } from "./components/outside/home/Home";
 import {
   TopBar,
   ShopAppWrapper,
@@ -10,7 +10,7 @@ import {
 import carIcon from "./utils/assets/shopping-car.json";
 import searchIcon from "./utils/assets/search-icon.json";
 import Icon from "./utils/modules/Icon";
-import { Footer } from "./outside/footer/Footer";
+import { Footer } from "./components/outside/footer/Footer";
 
 function ShopApp() {
   return (
