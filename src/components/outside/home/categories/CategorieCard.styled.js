@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const CardWrapper = styled.div`
   display: flex;
@@ -13,6 +13,16 @@ const CardWrapper = styled.div`
   background-color: #656d4a;
   margin: 0;
   padding: 0;
+
+  ${({ active }) => css`
+    color: inherit;
+
+    ${active
+      ? css`
+          background-color: #e6007e;
+        `
+      : ""}
+  `}
 
   .CardWrapper {
     &-title {
