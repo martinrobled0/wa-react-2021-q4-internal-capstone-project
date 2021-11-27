@@ -1,5 +1,4 @@
 import React from "react";
-import { Home } from "./components/outside/home/Home";
 import {
   TopBar,
   ShopAppWrapper,
@@ -7,16 +6,12 @@ import {
   HeaderMenu,
   SearchInput,
 } from "./ShopApp.styled";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Link } from "react-router-dom";
 import carIcon from "./utils/assets/shopping-car.json";
 import searchIcon from "./utils/assets/search-icon.json";
 import Icon from "./utils/modules/Icon";
 import { Footer } from "./components/outside/footer/Footer";
-import { ProductList } from "./components/outside/home/products/productList/ProductList";
-
-const goToHome = () => {
-  window.location.href = "/";
-};
+import { AppRouter } from "./router/AppRouter";
 
 export const ShopApp = () => {
   return (
@@ -27,7 +22,7 @@ export const ShopApp = () => {
             <span>The Best Ecommerce Store</span>
           </TopBar>
           <HeaderTitle>
-            <span onClick={goToHome}>Muebles Troncoso</span>
+            <Link to="/">Muebles Troncoso</Link>
           </HeaderTitle>
           <HeaderMenu>
             <div className="searchSection">
@@ -54,10 +49,7 @@ export const ShopApp = () => {
           </HeaderMenu>
         </div>
         <div className="content">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product-list" element={<ProductList />}></Route>
-          </Routes>
+          <AppRouter />
         </div>
         <div className="footer">
           <Footer />

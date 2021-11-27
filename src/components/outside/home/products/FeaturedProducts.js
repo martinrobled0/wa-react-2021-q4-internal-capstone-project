@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import dataProducts from "../../../../mocks/en-us/featured-products.json";
 import {
   FeaturedProductsWrapper,
@@ -7,10 +8,6 @@ import {
 import { ProductCard } from "./ProductCard";
 
 const { results } = dataProducts;
-
-const goToProducts = () => {
-  window.location.href = "product-list";
-};
 
 export const FeaturedProducts = () => {
   return (
@@ -22,9 +19,9 @@ export const FeaturedProducts = () => {
         ))}
       </FeaturedProductsList>
       <div className="buttonWrapper">
-        <button className="viewAll" onClick={goToProducts}>
+        <Link className="viewAll" to="/product-list">
           View all products
-        </button>
+        </Link>
       </div>
     </FeaturedProductsWrapper>
   );
