@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import dataProducts from "../../../../mocks/en-us/featured-products.json";
 import {
   FeaturedProductsWrapper,
@@ -17,6 +18,11 @@ export const FeaturedProducts = () => {
           <ProductCard key={data.id} {...data.data} />
         ))}
       </FeaturedProductsList>
+      <div className="buttonWrapper">
+        <Link className="viewAll" to="/product-list">
+          View all products
+        </Link>
+      </div>
     </FeaturedProductsWrapper>
   );
 };

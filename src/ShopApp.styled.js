@@ -15,6 +15,7 @@ const ShopAppWrapper = styled.div`
   .content {
     display: flex;
     width: 100%;
+    flex-direction: column;
   }
 `;
 
