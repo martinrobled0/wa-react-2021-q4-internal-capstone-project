@@ -1,4 +1,4 @@
-import dataCategories from "../../../../mocks/en-us/product-categories.json";
+import { useProductCategories } from "../../../../hooks/useProductCategories";
 import { CategorieCard } from "../categories/CategorieCard";
 import {
   ProductsCategories,
@@ -6,16 +6,18 @@ import {
   ProductsCategoriesTitle,
 } from "./CategoriesGrid.styled";
 
-const { results } = dataCategories;
-
 export const CategoriesGrid = () => {
+  const { data } = useProductCategories();
+  const { results } = data;
+
   return (
     <ProductsCategories>
       <ProductsCategoriesTitle>Categories</ProductsCategoriesTitle>
       <ProductsList>
-        {results.map((data) => (
-          <CategorieCard key={data.id} {...data.data} />
-        ))}
+        {results &&
+          results.map((data) => (
+            <CategorieCard key={data.id} id={data.id} {...data.data} />
+          ))}
       </ProductsList>
     </ProductsCategories>
   );

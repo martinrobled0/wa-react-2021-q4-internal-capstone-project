@@ -3,7 +3,17 @@ import styled from "styled-components";
 const SideBarLayout = styled.div`
   float: right;
   width: 30%;
+  margin: 0;
+  padding: 0;
+  .topSection{
+    margin-top:50px;
+    padding:5px;
 
+    button {
+    max-width: 120px;
+    width: 120px;
+    }
+  }
   .title {
         color: #656d4a;
         font-weight: bold;

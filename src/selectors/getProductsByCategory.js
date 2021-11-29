@@ -13,3 +13,27 @@ export const getProductsByCategoryId = (categories = []) => {
   });
   return products;
 };
+
+// import { useProductsGrid } from "../hooks/useProductsGrid";
+
+// export const getProductsByCategoryId = (categories = []) => {
+//   if (categories.length === 0) {
+//     const { data } = useProductsGrid();
+//     let { results } = data;
+//     return results;
+//   }
+//   const products = [];
+//   const { data } = useProductsGrid();
+//   const { results } = data;
+//   console.log("sfsaf");
+//   console.log(data);
+//   categories.map((id) => {
+//     results &&
+//       results.map((product) => {
+//         if (product.data.category.id === id) {
+//           products.push(product);
+//         }
+//       });
+//   });
+//   return products;
+// };

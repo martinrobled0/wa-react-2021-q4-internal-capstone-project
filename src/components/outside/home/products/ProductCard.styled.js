@@ -50,8 +50,37 @@ const ProductCardWrapper = styled.div`
       padding-left: 5px;
     }
 
-    &-price {
+    &-actions {
+      display: flex;
       width: 50%;
+      justify-content: end;
+      padding: 5px;
+      flex-direction: column;
+    }
+
+    &-button {
+      max-width: 130px;
+      width: 130px;
+      max-height: 25px;
+      background-color: #6e4700;
+      border-radius: 3px;
+      border-style: none;
+      box-sizing: border-box;
+      color: #ffffff;
+      cursor: pointer;
+      display: inline-block;
+      text-align: center;
+      margin-top: 5px;
+      align-self: end;
+
+      &:hover,
+      &:focus {
+        background-color: #e1b564;
+      }
+    }
+
+    &-price {
+      width: 100%;
       display: flex;
       justify-content: end;
       padding-right: 10px;

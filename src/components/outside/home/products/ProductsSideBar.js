@@ -22,12 +22,9 @@ const ProductSideBar = ({ results }) => {
   }, [category.length]);
 
   const handleCategoryChange = (categoryId) => () => {
-    console.log(categoryId);
     if (category.includes(categoryId)) {
-      console.log("1");
       setCategory(category.filter((item) => !item));
     } else {
-      console.log("2");
       setCategory(category.concat(categoryId));
     }
   };
