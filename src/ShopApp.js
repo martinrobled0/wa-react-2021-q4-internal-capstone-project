@@ -16,6 +16,7 @@ import { AppRouter } from "./router/AppRouter";
 export const ShopApp = () => {
   const [searchValue, setSearchValue] = useState("");
   const history = useNavigate();
+
   const goToSearch = () => {
     history(`/search/${searchValue}`);
   };

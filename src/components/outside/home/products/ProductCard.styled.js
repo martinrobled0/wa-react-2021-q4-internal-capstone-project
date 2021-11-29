@@ -4,13 +4,17 @@ const ProductCardWrapper = styled.div`
   width: 340px;
   height: 400px;
   transition: box-shadow 0.3s ease-in-out, top 0.3s ease-in-out;
+  text-decoration: none;
 
   @media (max-width: 700px) {
     width: 100%;
     max-height: 400px;
   }
-
+  .cardLink {
+    text-decoration: none;
+  }
   .ProductCard {
+    text-decoration: none;
     &-image {
       width: 340px;
       height: 300px;
@@ -43,6 +47,7 @@ const ProductCardWrapper = styled.div`
       width: 100%;
       display: flex;
       align-items: center;
+      text-decoration: none;
     }
 
     &-product {
@@ -56,6 +61,7 @@ const ProductCardWrapper = styled.div`
       justify-content: end;
       padding: 5px;
       flex-direction: column;
+      text-decoration: none;
     }
 
     &-button {

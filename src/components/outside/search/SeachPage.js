@@ -8,11 +8,12 @@ export const SearchPage = () => {
   let { q } = useParams();
   const { data } = useSearchProduct(q);
   const { results: products, results_size } = data;
+
   return (
     <>
       <SearchPageWrapper>
         <div className="title">Results:</div>
-        {!results_size > 0 && (
+        {products && !results_size > 0 && (
           <div className="noResults">
             <p>Sorry, products not found. Try again.</p>
             <img

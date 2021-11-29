@@ -1,16 +1,22 @@
 import { PaginationWrapper } from "./Pagination.styled";
+import PropTypes from "prop-types";
 
-export const Pagination = () => {
+export const Pagination = ({ size }) => {
   return (
     <PaginationWrapper>
       <a href="#">&laquo;</a>
-      <a href="#">1</a>
-      <a href="#">2</a>
-      <a href="#">3</a>
-      <a href="#">4</a>
-      <a href="#">5</a>
-      <a href="#">6</a>
+
+      {Array.from(Array(size), (e, i) => {
+        return <a href="#">{i + 1}</a>;
+      })}
+
       <a href="#">&raquo;</a>
     </PaginationWrapper>
   );
+};
+
+Pagination.propTypes = {
+  results: PropTypes.number,
+  size: PropTypes.number,
+  results_per_page: PropTypes.number,
 };

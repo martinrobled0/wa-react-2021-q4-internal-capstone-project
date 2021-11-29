@@ -7,8 +7,8 @@ export const ProductCard = ({ name, price, mainimage, category, id }) => {
   const categoryName = category.slug;
   const { url, alt } = mainimage;
   return (
-    <Link to={`/products/${id}`}>
-      <ProductCardWrapper>
+    <ProductCardWrapper>
+      <Link className="cardLink" to={`/products/${id}`}>
         <div className="ProductCard-image">
           <img src={url} alt={alt} />
         </div>
@@ -22,8 +22,8 @@ export const ProductCard = ({ name, price, mainimage, category, id }) => {
             <button className="ProductCard-button">Add to cart</button>
           </div>
         </div>
-      </ProductCardWrapper>
-    </Link>
+      </Link>
+    </ProductCardWrapper>
   );
 };
 
