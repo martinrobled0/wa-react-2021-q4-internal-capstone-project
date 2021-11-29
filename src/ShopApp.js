@@ -21,6 +21,12 @@ export const ShopApp = () => {
     history(`/search/${searchValue}`);
   };
 
+  const handleEnter = (e) => {
+    if (e.key === "Enter") {
+      history(`/search/${searchValue}`);
+    }
+  };
+
   return (
     <ShopAppWrapper>
       <div className="Header">
@@ -34,6 +40,7 @@ export const ShopApp = () => {
           <div className="searchSection">
             <SearchInput
               value={searchValue}
+              onKeyUp={handleEnter}
               onChange={(e) => setSearchValue(e.target.value)}
               placeholder="Search ...."
             />
