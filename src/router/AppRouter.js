@@ -1,8 +1,8 @@
 import { Route, Routes } from "react-router-dom";
-import { Home } from "../components/outside/home/Home";
-import { ProductDetailPage } from "../components/outside/home/products/productDetail/ProductDetailPage";
-import { ProductList } from "../components/outside/home/products/productList/ProductList";
-import { SearchPage } from "../components/outside/search/SeachPage";
+import { ProductDetailPage } from "../components/pages/ProductDetailPage";
+import { ProductList } from "../components/templates/ProductList";
+import { Home } from "../components/pages/Home";
+import { SearchPage } from "../components/pages/SeachPage";
 
 export const AppRouter = () => {
   return (

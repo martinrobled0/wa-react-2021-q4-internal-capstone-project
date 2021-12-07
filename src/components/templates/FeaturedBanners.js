@@ -1,7 +1,7 @@
-import { useFeaturedBanners } from "../../../../hooks/useFeaturedBanners";
-import Slider from "../../../../utils/modules/Slider/Slider";
-import ImageC from "../../../../utils/modules/image/Image";
-import { SliderItem } from "../../../../utils/modules/Slider/SliderItem";
+import { useFeaturedBanners } from "../../hooks/useFeaturedBanners";
+import Slider from "../../utils/modules/Slider/Slider";
+import ImageC from "../../utils/modules/image/Image";
+import { SliderItem } from "../../utils/modules/Slider/SliderItem";
 // import dataBanners from "./../../../../mocks/en-us/featured-banners";
 import { BannerTitle } from "./FeaturedBaners.styled";
 

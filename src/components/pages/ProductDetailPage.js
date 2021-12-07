@@ -1,8 +1,8 @@
 import { Link, useParams } from "react-router-dom";
-import { useGetProduct } from "../../../../../hooks/useGetProduct";
-import ImageC from "../../../../../utils/modules/image/Image";
-import Slider from "../../../../../utils/modules/Slider/Slider";
-import { SliderItem } from "../../../../../utils/modules/Slider/SliderItem";
+import { useGetProduct } from "../../hooks/useGetProduct";
+import ImageC from "../../utils/modules/image/Image";
+import Slider from "../../utils/modules/Slider/Slider";
+import { SliderItem } from "../../utils/modules/Slider/SliderItem";
 import {
   ProductDetailGallery,
   ProductDetailSlider,

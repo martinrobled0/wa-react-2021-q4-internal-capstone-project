@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { TopBar, HeaderTitle, HeaderMenu, SearchInput } from "./Header.styled";
 import { Link, useNavigate } from "react-router-dom";
-import Icon from "../../../utils/modules/Icon";
-import searchIcon from "../../../utils/assets/search-icon.json";
-import carIcon from "../../../utils/assets/shopping-car.json";
+import Icon from "../../utils/modules/Icon";
+import searchIcon from "../../utils/assets/search-icon.json";
+import carIcon from "../../utils/assets/shopping-car.json";
 
 export const Header = () => {
   const [searchValue, setSearchValue] = useState("");

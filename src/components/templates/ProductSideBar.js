@@ -1,6 +1,7 @@
 import { SideBarLayout, SideBarWrapper } from "./ProductsSideBar.styled";
-import { CategorieCard } from "../../categories/CategorieCard";
+
 import PropTypes from "prop-types";
+import { CategorieCard } from "../elements/CategorieCard";
 
 export const ProductSideBar = ({ results, categories, setCategory }) => {
   const clearFilters = () => {

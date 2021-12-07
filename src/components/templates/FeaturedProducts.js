@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
-import { useFeaturedProducts } from "../../../../hooks/useFeaturedProducts";
+import { useFeaturedProducts } from "../../hooks/useFeaturedProducts";
 import {
   FeaturedProductsWrapper,
   FeaturedProductsTitle,
   FeaturedProductsList,
 } from "./FeacturedProducts.styled";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "../elements/ProductCard";
 
 export const FeaturedProducts = () => {
   const { data } = useFeaturedProducts();

@@ -2,8 +2,8 @@
 
 import PropTypes from "prop-types";
 import { useMemo, useState } from "react";
-import Pagination from "../../../../utils/modules/Pagination/Pagination";
-import { ProductCard } from "../ProductCard";
+import Pagination from "../../utils/modules/Pagination/Pagination";
+import { ProductCard } from "../elements/ProductCard";
 import { ProductListGridWrapped } from "./ProductListGrid.styled";
 
 let PageSize = 20;

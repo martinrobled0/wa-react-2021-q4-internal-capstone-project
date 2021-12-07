@@ -1,8 +1,8 @@
 import React from "react";
 import { ShopAppWrapper } from "./ShopApp.styled";
-import { Footer } from "./components/outside/footer/Footer";
+import { Footer } from "./components/templates/Footer";
 import { AppRouter } from "./router/AppRouter";
-import { Header } from "./components/outside/Header/Header";
+import { Header } from "./components/templates/Header";
 
 export const ShopApp = () => {
   return (

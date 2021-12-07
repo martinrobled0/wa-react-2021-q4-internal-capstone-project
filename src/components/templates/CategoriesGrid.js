@@ -1,5 +1,5 @@
-import { useProductCategories } from "../../../../hooks/useProductCategories";
-import { CategorieCard } from "../categories/CategorieCard";
+import { useProductCategories } from "../../hooks/useProductCategories";
+import { CategorieCard } from "../elements/CategorieCard";
 import {
   ProductsCategories,
   ProductsList,
