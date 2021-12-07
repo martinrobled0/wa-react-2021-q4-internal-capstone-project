@@ -4,7 +4,7 @@ const SearchPageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   padding: 25px;
-
+  background: #c2c5aa;
   .noResults {
     width: 100%;
     display: flex;

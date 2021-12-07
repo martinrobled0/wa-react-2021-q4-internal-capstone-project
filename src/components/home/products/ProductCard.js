@@ -9,17 +9,17 @@ export const ProductCard = ({ name, price, mainimage, category, id }) => {
   return (
     <ProductCardWrapper>
       <Link className="cardLink" to={`/products/${id}`}>
-        <div className="ProductCard-image">
+        <div className="product-card-image">
           <img src={url} alt={alt} />
         </div>
-        <div className="ProductCard-details">
-          <div className="ProductCard-product">
-            <div className="ProductCard-name">{name}</div>
-            <div className="ProductCard-slug">{categoryName}</div>
+        <div className="product-card-details">
+          <div className="product-card-product">
+            <div className="product-card-name">{name}</div>
+            <div className="product-card-slug">{categoryName}</div>
           </div>
-          <div className="ProductCard-actions">
-            <div className="ProductCard-price">$ {price}</div>
-            <button className="ProductCard-button">Add to cart</button>
+          <div className="product-card-actions">
+            <div className="product-card-price">$ {price}</div>
+            <button className="product-card-button">Add to cart</button>
           </div>
         </div>
       </Link>

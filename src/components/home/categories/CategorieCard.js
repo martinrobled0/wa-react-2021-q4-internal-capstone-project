@@ -8,8 +8,7 @@ export const CategorieCard = ({ name, main_image, renderImage = true, id }) => {
   return (
     <CardWrapper id={id}>
       <div className="CardWrapper-title">
-        {renderImage && <Link to={`category=${id}`}>{name}</Link>}
-        {!renderImage && name}
+        {renderImage ? <Link to={`category=${id}`}>{name}</Link> : name}
       </div>
       {renderImage && <img src={url} alt={alt} />}
       <Outlet />

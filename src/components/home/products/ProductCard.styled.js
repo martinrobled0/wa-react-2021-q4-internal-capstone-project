@@ -13,7 +13,7 @@ const ProductCardWrapper = styled.div`
   .cardLink {
     text-decoration: none;
   }
-  .ProductCard {
+  .product-card {
     text-decoration: none;
     &-image {
       width: 340px;

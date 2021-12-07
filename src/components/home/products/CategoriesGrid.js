@@ -9,14 +9,18 @@ import {
 export const CategoriesGrid = () => {
   const { data } = useProductCategories();
   const { results } = data;
-
   return (
     <ProductsCategories>
       <ProductsCategoriesTitle>Categories</ProductsCategoriesTitle>
       <ProductsList>
         {results &&
           results.map((data) => (
-            <CategorieCard key={data.id} id={data.id} {...data.data} />
+            <CategorieCard
+              key={data.id}
+              id={data.id}
+              name={data.data.name}
+              main_image={data.data.main_image}
+            />
           ))}
       </ProductsList>
     </ProductsCategories>

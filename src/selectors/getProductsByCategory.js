@@ -25,8 +25,6 @@ export const getProductsByCategoryId = (categories = []) => {
 //   const products = [];
 //   const { data } = useProductsGrid();
 //   const { results } = data;
-//   console.log("sfsaf");
-//   console.log(data);
 //   categories.map((id) => {
 //     results &&
 //       results.map((product) => {

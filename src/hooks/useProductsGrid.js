@@ -1,10 +1,12 @@
+/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/constants";
 import { useLatestAPI } from "../utils/hooks/useLatestAPI";
 
 export function useProductsGrid() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [products, setProducts] = useState(() => ({
+  const [allProducts, setAllProducts] = useState(() => ({
     data: {},
     isLoading: true,
   }));
@@ -18,8 +20,7 @@ export function useProductsGrid() {
 
     async function getFeaturedBanners() {
       try {
-        setProducts({ data: {}, isLoading: true });
-
+        setAllProducts({ data: {}, isLoading: true });
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "product")]]'
@@ -30,9 +31,9 @@ export function useProductsGrid() {
         );
         const data = await response.json();
 
-        setProducts({ data, isLoading: false });
+        setAllProducts({ data, isLoading: false });
       } catch (err) {
-        setProducts({ data: {}, isLoading: false });
+        setAllProducts({ data: {}, isLoading: false });
         console.error(err);
       }
     }
@@ -44,5 +45,5 @@ export function useProductsGrid() {
     };
   }, [apiRef, isApiMetadataLoading]);
 
-  return products;
+  return allProducts;
 }

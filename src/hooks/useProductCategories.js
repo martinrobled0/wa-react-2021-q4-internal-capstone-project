@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/constants";
 import { useLatestAPI } from "../utils/hooks/useLatestAPI";

@@ -1,24 +1,6 @@
 import styled from "styled-components";
 
-const ProductListContainer = styled.div`
-  background: #eaeaed;
-  clear: both;
-  width: 100%;
-
-  &:before,
-  &:after {
-    content: "";
-    display: table;
-  }
-  &:after {
-    clear: both;
-  }
-
-  @media (max-width: 700px) {
-  }
-`;
-
-const ProductListGrid = styled.div`
+const ProductListGridWrapped = styled.div`
   float: left;
   width: 63%;
 
@@ -48,4 +30,4 @@ const ProductListGrid = styled.div`
   }
 `;
 
-export { ProductListContainer, ProductListGrid };
+export { ProductListGridWrapped };
