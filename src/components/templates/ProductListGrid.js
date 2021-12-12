@@ -10,17 +10,17 @@ let PageSize = 20;
 export const ProductListGrid = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
 
-  const currentProductsDisplayed = useMemo(() => {
-    const firstPageIndex = (currentPage - 1) * PageSize;
-    const lastPageIndex = firstPageIndex + PageSize;
-    return products.slice(firstPageIndex, lastPageIndex);
-  }, [currentPage]);
+  // const currentProductsDisplayed = useMemo(() => {
+  //   const firstPageIndex = (currentPage - 1) * PageSize;
+  //   const lastPageIndex = firstPageIndex + PageSize;
+  //   return products.slice(firstPageIndex, lastPageIndex);
+  // }, [currentPage]);
 
   return (
     <ProductListGridWrapped>
       <div className="title">Products</div>
       <div className="container">
-        {currentProductsDisplayed.map((product) => (
+        {products.map((product) => (
           <ProductCard key={product.id} id={product.id} {...product.data} />
         ))}
       </div>

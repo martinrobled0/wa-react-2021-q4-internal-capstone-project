@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/constants";
 import { useLatestAPI } from "../utils/hooks/useLatestAPI";
 
-export function useProductsGrid() {
+export function useProductsBycategoryId({ categoryId }) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
-  const [allProducts, setAllProducts] = useState(() => ({
+  const [productsFiltered, setProductsFiltered] = useState(() => ({
     data: {},
     isLoading: true,
   }));
-
+  console.log(categoryId);
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
       return () => {};
@@ -20,20 +20,21 @@ export function useProductsGrid() {
 
     async function getFeaturedBanners() {
       try {
-        setAllProducts({ data: {}, isLoading: true });
+        setProductsFiltered({ data: {}, isLoading: true });
+        const query = `[[any(my.product.category, ["${categoryId}"])]]`;
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "product")]]'
-          )}&lang=en-us&pageSize=12`,
+          )}&lang=en-us&pageSize=12&q=${encodeURIComponent(query)}`,
           {
             signal: controller.signal,
           }
         );
         const data = await response.json();
 
-        setAllProducts({ data, isLoading: false });
+        setProductsFiltered({ data, isLoading: false });
       } catch (err) {
-        setAllProducts({ data: {}, isLoading: false });
+        setProductsFiltered({ data: {}, isLoading: false });
         console.error(err);
       }
     }
@@ -44,6 +45,7 @@ export function useProductsGrid() {
       controller.abort();
     };
   }, [apiRef, isApiMetadataLoading]);
-  console.log(allProducts);
-  return allProducts;
+
+  console.log(productsFiltered);
+  return productsFiltered;
 }

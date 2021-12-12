@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { results } from "../mocks/en-us/products.json";
 
-export const getProductsByCategoryId = (categories = []) => {
+export const getProductsByCategory = (categories = []) => {
   if (categories.length === 0) return results;
   const products = [];
   categories.map((id) => {
