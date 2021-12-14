@@ -4,13 +4,16 @@ import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/constants";
 import { useLatestAPI } from "../utils/hooks/useLatestAPI";
 
-export function useProductsBycategoryId({ categories }) {
+export const useProductsBycategoryId = (categories) => {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [productsFiltered, setProductsFiltered] = useState(() => ({
     data: {},
     isLoading: true,
   }));
-  console.log(categories);
+  const [queryCategories, setQueryCategories] = useState(categories);
+  useEffect(() => {
+    setQueryCategories(categories);
+  }, [categories]);
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
       return () => {};
@@ -21,7 +24,7 @@ export function useProductsBycategoryId({ categories }) {
     async function getFeaturedBanners() {
       try {
         setProductsFiltered({ data: {}, isLoading: true });
-        const query = `[[any(my.product.category, "${categories}")]]`;
+        const query = `[[any(my.product.category, ["${queryCategories}"])]]`;
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "product")]]'
@@ -44,8 +47,7 @@ export function useProductsBycategoryId({ categories }) {
     return () => {
       controller.abort();
     };
-  }, [apiRef, isApiMetadataLoading]);
+  }, [apiRef, isApiMetadataLoading, queryCategories]);
 
-  console.log(productsFiltered);
   return productsFiltered;
-}
+};

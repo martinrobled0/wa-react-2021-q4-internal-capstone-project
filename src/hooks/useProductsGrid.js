@@ -44,6 +44,5 @@ export function useProductsGrid() {
       controller.abort();
     };
   }, [apiRef, isApiMetadataLoading]);
-  console.log(allProducts);
   return allProducts;
 }

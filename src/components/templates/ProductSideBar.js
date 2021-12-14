@@ -15,7 +15,6 @@ export const ProductSideBar = ({ results, categories, setCategory }) => {
       setCategory(categories.concat(categoryId));
     }
   };
-
   return (
     <SideBarLayout>
       <div className="topSection">
