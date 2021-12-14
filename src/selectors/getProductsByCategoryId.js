@@ -17,10 +17,9 @@ export const getProductsByCategoryId = ({ categories = [] }) => {
   }
   let products = [{ results: [], total_results_size: 0 }];
 
-  categories.forEach((id) => {
-    let productsFiltered = useProductsBycategoryId(id);
-    products = [...productsFiltered];
-  });
+  let productsFiltered = useProductsBycategoryId(categories);
+  products = [...productsFiltered];
+
   console.log(products);
   setFiltered(() => ({
     results: products,

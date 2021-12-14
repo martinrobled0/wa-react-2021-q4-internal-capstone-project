@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useMemo, useState } from "react";
 import { useProductCategories } from "../../hooks/useProductCategories";
+import { useProductsBycategoryId } from "../../hooks/useProductsByCategoryId";
 import { useProductsGrid } from "../../hooks/useProductsGrid";
 import { getProductsByCategoryId } from "../../selectors/getProductsByCategoryId";
 import { Loader } from "../../utils/modules/loader/Loader";
@@ -17,20 +18,21 @@ export const ProductList = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const productsFiltered = getProductsByCategoryId(categories);
+  const productsFiltered = useProductsBycategoryId(categories);
   const productsFilteredInitial = useProductsGrid();
 
   useEffect(() => {
     console.log("vacio");
     setProducts(productsFilteredInitial);
     setLoading(false);
-  }, [categories.length === 0]);
+  }, [!categories.length]);
 
   useEffect(() => {
     console.log(categories.length);
     setLoading(true);
     setTimeout(() => {
       setProducts(productsFiltered);
+      console.log(productsFiltered);
       setLoading(false);
     }, 2000);
   }, [categories.length > 0]);

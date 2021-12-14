@@ -4,13 +4,13 @@ import { useState, useEffect } from "react";
 import { API_BASE_URL } from "../utils/constants";
 import { useLatestAPI } from "../utils/hooks/useLatestAPI";
 
-export function useProductsBycategoryId({ categoryId }) {
+export function useProductsBycategoryId({ categories }) {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();
   const [productsFiltered, setProductsFiltered] = useState(() => ({
     data: {},
     isLoading: true,
   }));
-  console.log(categoryId);
+  console.log(categories);
   useEffect(() => {
     if (!apiRef || isApiMetadataLoading) {
       return () => {};
@@ -21,7 +21,7 @@ export function useProductsBycategoryId({ categoryId }) {
     async function getFeaturedBanners() {
       try {
         setProductsFiltered({ data: {}, isLoading: true });
-        const query = `[[any(my.product.category, ["${categoryId}"])]]`;
+        const query = `[[any(my.product.category, "${categories}")]]`;
         const response = await fetch(
           `${API_BASE_URL}/documents/search?ref=${apiRef}&q=${encodeURIComponent(
             '[[at(document.type, "product")]]'
