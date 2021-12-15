@@ -7,7 +7,10 @@ export const useFilterProducts = (categories = []) => {
   const [categoriesQuery, setCategoriesQuery] = useState("");
   useEffect(() => {
     if (categories.length > 0) {
-      setCategoriesQuery(categories.join(","));
+      let categoriesString = categories.map((it) => {
+        return `${it}`;
+      });
+      setCategoriesQuery(categoriesString.join('","'));
     }
   }, [categories]);
   const productsFiltered = useProductsBycategoryId(categoriesQuery);
@@ -17,7 +20,6 @@ export const useFilterProducts = (categories = []) => {
     if (categories.length > 0) {
       setProducts(productsFiltered);
     } else {
-      // default
       setProducts(productsFilteredInitial);
     }
   }, [

@@ -9,7 +9,7 @@ import { ProductListGridWrapped } from "./ProductListGrid.styled";
 let PageSize = 20;
 export const ProductListGrid = ({ products }) => {
   const [currentPage, setCurrentPage] = useState(1);
-
+  console.log(products);
   return (
     <ProductListGridWrapped>
       <div className="title">Products</div>
