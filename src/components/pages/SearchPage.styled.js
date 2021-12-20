@@ -1,26 +1,17 @@
 import styled from "styled-components";
 
-const ProductListContainer = styled.div`
-  background: #eaeaed;
-  clear: both;
-  width: 100%;
-
-  &:before,
-  &:after {
-    content: "";
-    display: table;
+const SearchPageWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  background: #c2c5aa;
+  .noResults {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
-  &:after {
-    clear: both;
-  }
-
-  @media (max-width: 700px) {
-  }
-`;
-
-const ProductListGrid = styled.div`
-  float: left;
-  width: 63%;
 
   .title {
     color: #656d4a;
@@ -34,7 +25,7 @@ const ProductListGrid = styled.div`
   }
 
   .container {
-    padding: 50px 60px;
+    padding: 0;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
@@ -43,9 +34,9 @@ const ProductListGrid = styled.div`
     }
 
     @media (min-width: 774px) {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 `;
 
-export { ProductListContainer, ProductListGrid };
+export { SearchPageWrapper };

@@ -1,25 +1,26 @@
 import { Link } from "react-router-dom";
-import dataProducts from "../../../../mocks/en-us/featured-products.json";
+import { useFeaturedProducts } from "../../hooks/useFeaturedProducts";
 import {
   FeaturedProductsWrapper,
   FeaturedProductsTitle,
   FeaturedProductsList,
 } from "./FeacturedProducts.styled";
-import { ProductCard } from "./ProductCard";
-
-const { results } = dataProducts;
+import { ProductCard } from "../elements/ProductCard";
 
 export const FeaturedProducts = () => {
+  const { data } = useFeaturedProducts();
+  const { results } = data;
   return (
     <FeaturedProductsWrapper>
       <FeaturedProductsTitle>Featured Products</FeaturedProductsTitle>
       <FeaturedProductsList>
-        {results.map((data) => (
-          <ProductCard key={data.id} {...data.data} />
-        ))}
+        {results &&
+          results.map((data) => (
+            <ProductCard key={data.id} id={data.id} {...data.data} />
+          ))}
       </FeaturedProductsList>
       <div className="buttonWrapper">
-        <Link className="viewAll" to="/product-list">
+        <Link className="viewAll" to="/products">
           View all products
         </Link>
       </div>

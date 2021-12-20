@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { ImageDisplay } from "./Image.styled";
 
-const ImageC = ({ src, width, height, alt }) => (
+const ImageC = ({ src, width, height, alt = "image" }) => (
   <ImageDisplay
     src={src}
     width={width}
@@ -13,7 +13,7 @@ const ImageC = ({ src, width, height, alt }) => (
 
 ImageC.propTypes = {
   src: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
+  alt: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
 };

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { API_BASE_URL } from "../constants";
-import { useLatestAPI } from "./useLatestAPI";
+import { API_BASE_URL } from "../utils/constants";
+import { useLatestAPI } from "../utils/hooks/useLatestAPI";
 
 export function useFeaturedBanners() {
   const { ref: apiRef, isLoading: isApiMetadataLoading } = useLatestAPI();

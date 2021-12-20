@@ -1,14 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { CardWrapper } from "./CategorieCard.styled";
+import { Link, Outlet } from "react-router-dom";
 
 export const CategorieCard = ({ name, main_image, renderImage = true, id }) => {
   const { url, alt } = main_image;
-
   return (
     <CardWrapper id={id}>
-      <div className="CardWrapper-title">{name}</div>
+      <div className="CardWrapper-title">
+        {renderImage ? <Link to={`category=${id}`}>{name}</Link> : name}
+      </div>
       {renderImage && <img src={url} alt={alt} />}
+      <Outlet />
     </CardWrapper>
   );
 };
